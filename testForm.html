@@ -1,55 +1,114 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Test Web-to-Lead Salesforce</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-      function timestamp() {
-        var response = document.getElementById("g-recaptcha-response");
-        if (response == null || response.value.trim() == "") {
-          var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-          elems["ts"] = JSON.stringify(new Date().getTime());
-          document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+<form class="sf-form" action="https://test.salesforce.com/servlet/servlet.WebToLead" method="POST" id="form1">
+          <p>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block_content' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ block-content--2846--full.html.twig
+   ▪️ block-content--2846.html.twig
+   ▪️ block-content--formulaire-salesforces--full.html.twig
+   ▪️ block-content--formulaire-salesforces.html.twig
+   ▪️ block-content--full.html.twig
+   ▪️ block-content--2846.html.twig
+   ▪️ block-content--formulaire-salesforces.html.twig
+   ✅ block-content.html.twig
+-->
+<!-- 💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/altaprofits/templates/blocks/block-content.html.twig' -->
+
+</p><div class="">
+    <div class="content">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ field--block-content--body--formulaire-salesforces.html.twig
+   ▪️ field--block-content--body.html.twig
+   ✅ field--block-content--formulaire-salesforces.html.twig
+   ▪️ field--body.html.twig
+   ▪️ field--text-with-summary.html.twig
+   ▪️ field.html.twig
+-->
+<!-- 💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/altaprofits/templates/fields/field--block-content--formulaire-salesforces.html.twig' -->
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded",function(){
+    function timestamp() {
+    var response = document.getElementById("g-recaptcha-response");
+    if (response == null || response.value.trim() == "") {
+      var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+      elems["ts"] = JSON.stringify(new Date().getTime());
+      document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+    }
+
+    if(window.grecaptcha){
+      grecaptcha.ready(function() {
+        const response = grecaptcha.getResponse();
+        if (response.length === 0) {
+          document.querySelector('input[name="recaptcha_validate"]').value = '';
+          return false;
+        } else {
+          document.querySelector('input[name="recaptcha_validate"]').value = 'valid';
+          return true;
         }
-      }
-      setInterval(timestamp, 500);
-    </script>
-  </head>
-  <body>
-    <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DG50000045YRl" method="POST">
-      <input type="hidden" name="captcha_settings" value='{"keyname":"recaptchav2","fallback":"true","orgId":"00DG50000045YRl","ts":""}'>
-      <input type="hidden" name="oid" value="00DG50000045YRl">
-      <input type="hidden" name="retURL" value="https://altaprofits--altaint.sandbox.my.salesforce-setup.com">
-      <input type="hidden" name="utm_source__c" id="utm_source__c" value="testFromForm">
+      });
+    }
+    
+  }
+  setInterval(timestamp, 500);
 
-      <!-- Débogage (optionnel) -->
-      <input type="hidden" name="debug" value="1">
-      <input type="hidden" name="debugEmail" value="noufel.azzouni@ornidex.com">
+    document.querySelector(".sf-form input[type='submit']").addEventListener("click", function(event){
+      
+    });
+  });
+</script>
 
-      <label for="first_name">First Name</label>
-      <input id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
 
-      <label for="last_name">Last Name</label>
-      <input id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+  <input type="hidden" name="oid" value="00DG50000045YRl">
+  <input type="hidden" name="captcha_settings" value="{&quot;keyname&quot;:&quot;recaptchav2&quot;,&quot;fallback&quot;:&quot;true&quot;,&quot;orgId&quot;:&quot;00DG50000045YRl&quot;,&quot;ts&quot;:&quot;1744102005030&quot;}">
+      <!-- block 10005 --><p class="debug debug-0"><input type="hidden" id="00N6900000KoiDc" name="00N6900000KoiDc" title="Formulaire d'origine" value="Formulaire Restez informé"> <input class="token" type="hidden" name="debug" value="0"> <input class="token" type="hidden" name="debugEmail" value="apetit@altaprofits.fr"> <input class="token" type="hidden" name="00N3M000000U5GA" value="08/04/2025 10:46"> <input class="token" type="hidden" name="00N3M000000U5GF" value="08/04/2025 10:46"> <input class="token" type="hidden" name="00N3M000000U5GB" value="08/04/2025 10:46"> <input class="token" type="hidden" name="00N6900000KvNwu" value="08/04/2025 10:46"> <input class="token" type="hidden" name="00N6900000KvNwz" value="08/04/2025 10:46"> <input class="token" type="hidden" name="00N6900000KvNx4" value="08/04/2025 10:46"> <input class="token" type="hidden" name="retURL" value="http://altaprofits.com/documentation/nos-conseils/remerciement-optin"> <input class="token" type="hidden" name="lead_source" value="Site Internet"> <input class="token" type="hidden" name="00N6900000LNGlY" id="00N6900000LNGlY" title="Précision d'origine de piste" value="Page Parole d’Expert"></p><div class="style-group"><div class="style-groupform" style="float:none;margin-bottom:1.5rem;margin-left:33%;text-align:left;width:33%;"><p><label class="style-label" for="salutation">Êtes-vous déjà client ?</label></p><div class="style-form-select"><select class="select no-Sumo" id="Etes_vous_deja_client__c" name="Etes_vous_deja_client__c" title="Êtes-vous déjà client :">
+                                                                                                                                                           <option value="Oui">Oui</option>
+                                                                                                                                                           <option value="Non">Non</option>
+                                                                                                                                                        </select></div></div><div class="style-groupform form-civilite"><p><select class="select" id="salutation" name="salutation">
+                                                                                                                                                                                                <option disabled="" hidden="" selected="" value="">Civilité</option>
+                                                                                                                                                                                                <option value="1">Monsieur</option>
+                                                                                                                                                                                                <option value="2">Madame</option>
+                                                                                                                                                                                                <option value="3">Mademoiselle</option>
+                                                                                                                                                                                                </select></p></div><div class="style-groupform form-prenom"><p><input class="input" alt="Prénom" autocomplete="Off" data-msg-required="Ce champ est requis" data-rule-required="true" id="first_name" maxlength="80" name="first_name" placeholder="Prénom*" size="20" title="Prenom" type="text"> &nbsp;<label class="error" id="first_name-error" for="first_name" style="display: none;"></label></p></div><div class="style-groupform form-nom"><p><input class="input" alt="Nom" autocomplete="Off" data-msg-required="Ce champ est requis" data-rule-required="true" id="last_name" maxlength="80" name="last_name" placeholder="Nom*" size="20" title="Nom" type="text"> &nbsp;<label class="error" id="last_name-error" for="last_name" style="display: none;"></label></p></div></div><div class="style-group"><div class="style-groupform form-telephone"><p><input class="input" autocomplete="Off" data-msg-maxlength="Veuillez saisir un n° de 10 chiffres" data-msg-minlength="Veuillez saisir un n° de 10 chiffres" data-msg-required="Ce champ est requis" data-rule-required="true" aria-required="true" font-size="small" id="phone" name="phone" placeholder="Téléphone*" maxlength="40" minlength="10" size="20" type="text"> &nbsp;<label class="error" id="phone-error" for="phone" style="display: none;"></label></p></div><div class="style-groupform form-email"><p><input class="input" alt="e-mail" autocomplete="Off" id="email" maxlength="80" name="email" placeholder="Adresse e-mail *" size="20" title="e-mail" type="email" data-msg-required="Ce champ est requis" data-rule-required="true" data-msg-validemail="Cet email n'est pas valide"> &nbsp;<label class="error" id="email-error" for="email" style="display: none;"></label></p></div></div><div class="style-group"><div class="error checked-error" id="checked-error" data-msg-required="Pour que nous puissions vous informer, n’oubliez pas de cocher l'une des cases suivantes :" style="display: none;"></div><div class="label-checkbox"><input class="checkbox" id="00N6900000KvNwf" name="00N6900000KvNwf" type="checkbox" value="1" aria-required="" data-rule-required="true"> <label class="--tiny" for="00N6900000KvNwf">J'accepte d’être appelé par Altaprofits, en vue d’obtenir des informations et conseils relatifs à des solutions d’épargne.</label></div><div class="label-checkbox"><input class="checkbox" id="00N6900000KvNwk" name="00N6900000KvNwk" type="checkbox" value="1" aria-required="" data-rule-required="true"> <label class="--tiny" for="00N6900000KvNwk">J’accepte de recevoir par email, de la part d'Altaprofits, des informations et offres commerciales concernant des offres d'épargne.</label></div><div class="label-checkbox"><input class="checkbox" id="00N6900000KvNwp" name="00N6900000KvNwp" type="checkbox" value="1" aria-required="" data-rule-required="true"> <label class="--tiny" for="00N6900000KvNwp">J’accepte de recevoir par SMS, de la part d’Altaprofits, des informations et offres commerciales concernant des offres d’épargne.</label></div><!--
+    <div class="style-groupform">
+                
+        <div class="g-recaptcha" data-sitekey="6LeZKnQpAAAAAE_XcwGm7nghW9n968547nBLrwMw">
+                        &nbsp;
+                    
+        </div>
+                
+        <p>
+                        <input style="height:0px;position:relative;width:0px;z-index:-1;" type="text" data-rule-required="true" name="recaptcha_validate" data-msg-required="Veuillez valider le captcha"> &nbsp;<label class="error" id="recaptcha_validate-error" for="recaptcha_validate">&nbsp;</label>
+                    
+        </p>
+            
+    </div>
+    --><div class="input-button"><input class="button button--center button--primary button--arrow" type="submit" name="submit" value="Envoyer"></div><div class="contact-us-section__personal_data"><p class="--tiny">Vos données personnelles sont collectées par Altaprofits, en sa qualité de responsable de traitements, à des fins de prospection commerciale. Dans les conditions prévues par la réglementation en vigueur en matière de protection des données personnelles, vous disposez d’un droit d’accès, de rectification, d’opposition, de retrait de consentement à la prospection commerciale, de suppression de vos données personnelles, que vous pouvez exercer en adressant votre demande par mail à : mes-données-personnelles@altaprofits.fr ou par courrier à : Altaprofits Conformité 35, rue de Rome, 75008 Paris.</p><p class="--tiny">Nous vous rappelons en outre que si vous ne souhaitez pas faire l’objet de prospection commerciale par voie téléphonique, vous pouvez vous inscrire gratuitement sur la liste d’opposition au démarchage téléphonique sur le site internet <a class="link" href="https://www.bloctel.gouv.fr/" target="_blank">www.bloctel.gouv.fr</a>. Pour toute information complémentaire sur le traitement de vos données personnelles, <a class="link" href="/vos-donnees-personnelles" target="_blank">consultez notre politique de données personnelles</a>.</p></div></div>
+  
 
-      <label for="email">Email</label>
-      <input id="email" maxlength="80" name="email" size="20" type="email" /><br>
+<!-- END CUSTOM TEMPLATE OUTPUT from 'themes/custom/altaprofits/templates/fields/field--block-content--formulaire-salesforces.html.twig' -->
 
-      <label for="company">Company</label>
-      <input id="company" maxlength="40" name="company" size="20" type="text" /><br>
 
-      <label for="city">City</label>
-      <input id="city" maxlength="40" name="city" size="20" type="text" /><br>
 
-      <label for="state">State/Province</label>
-      <input id="state" maxlength="20" name="state" size="20" type="text" /><br>
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ field--block-content--field-bid--formulaire-salesforces.html.twig
+   ✅ field--block-content--field-bid.html.twig
+   ▪️ field--block-content--formulaire-salesforces.html.twig
+   ▪️ field--field-bid.html.twig
+   ▪️ field--integer.html.twig
+   ▪️ field.html.twig
+-->
+<!-- 💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/altaprofits/templates/fields/field--block-content--field-bid.html.twig' -->
 
-      <!-- Widget reCAPTCHA -->
-      <div class="g-recaptcha" data-sitekey="VOTRE_SITE_KEY"></div>
-      <br>
+<!-- END CUSTOM TEMPLATE OUTPUT from 'themes/custom/altaprofits/templates/fields/field--block-content--field-bid.html.twig' -->
 
-      <input type="submit" name="submit" value="Envoyer">
-    </form>
-  </body>
-</html>
+
+  </div>
+</div></form>
